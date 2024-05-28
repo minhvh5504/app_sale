@@ -60,8 +60,8 @@ const Register = () => {
         <TouchableOpacity>
           <Text style={styles.text__Bottom}>Sign Up</Text>
         </TouchableOpacity>
-        <View style={{flexDirection: 'row', marginTop: '3%'}}>
-          <Text style={{color: 'black'}}>Already have an account?</Text>
+        <View style={{flexDirection: 'row', marginTop: '5%'}}>
+          <Text style={{fontWeight: '800'}}>Already have an account?</Text>
           <TouchableOpacity>
             <Text style={{fontSize: 15, fontWeight: '900', paddingLeft: '1%', color: 'blue'}}>Login</Text>
           </TouchableOpacity>

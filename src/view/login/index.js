@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import {View, Text, Image, TouchableOpacity, TextInput} from 'react-native'
+import {View, Text, TouchableOpacity, Image, TextInput} from 'react-native'
 import React from 'react'
 import styles from './styles'
 
@@ -38,19 +38,17 @@ const Login = () => {
         }}>
         <Text style={styles.input__Text}>Email</Text>
         <TextInput placeholder='Input your email' style={styles.text__Input}></TextInput>
-        <Text style={styles.input__Text}>Username</Text>
-        <TextInput placeholder='Input your username' style={styles.text__Input}></TextInput>
         <Text style={styles.input__Text}>Password</Text>
         <TextInput placeholder='********' secureTextEntry={true} style={styles.text__Input}></TextInput>
         <Text style={styles.input__Text}>Confirm Password</Text>
         <TextInput placeholder='********' secureTextEntry={true} style={styles.text__Input}></TextInput>
-        <View style={{flexDirection: 'row', alignItems: 'center', marginLeft: '5%'}}>
-          <Text style={{paddingLeft: '3%', fontSize: 12, fontWeight: '800'}}>I agree with Terms and Privacy</Text>
-        </View>
+        <TouchableOpacity>
+          <Text style={{paddingLeft: '65%', fontSize: 12, fontWeight: '800'}}>Forgot Password?</Text>
+        </TouchableOpacity>
       </View>
       <View style={{alignItems: 'center'}}>
         <TouchableOpacity>
-          <Text style={styles.text__Bottom}>Sign Up</Text>
+          <Text style={styles.text__Bottom}>Login</Text>
         </TouchableOpacity>
         <View style={{flexDirection: 'row', marginTop: '3%'}}>
           <Text style={{color: 'black'}}>Already have an account?</Text>
@@ -59,7 +57,7 @@ const Login = () => {
           </TouchableOpacity>
         </View>
         <Image
-          source={require('../../assets/images/Ellipse2.png')}
+          source={require('../../assets/images/Ellipse3.png')}
           style={{position: 'absolute', marginTop: '23%'}}></Image>
       </View>
     </View>

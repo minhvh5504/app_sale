@@ -7,10 +7,10 @@ const styles = StyleSheet.create({
   },
   text__Input: {
     marginBottom: '5%',
-    paddingBottom: '1%',
+    paddingBottom: '2%',
     backgroundColor: '#FFFFFF',
     borderRadius: 25,
-    paddingLeft: 20,
+    paddingLeft: 30,
   },
   input__Text: {
     color: 'white',
