@@ -1,9 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
-import Register from 'view/register'
-import Login from 'view/login'
+import RootComponent from 'view/index'
 
 const App = () => {
-  return (<Register />), (<Login />)
+  return <RootComponent />
 }
 
 export default App

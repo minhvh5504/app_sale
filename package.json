@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@react-native-community/checkbox": "^0.5.17",
+    "@react-navigation/native": "next",
+    "@react-navigation/native-stack": "next",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-native": "0.74.1",

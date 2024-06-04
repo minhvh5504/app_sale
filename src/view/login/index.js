@@ -1,35 +1,20 @@
 /* eslint-disable no-undef */
 import {View, Text, TouchableOpacity, Image, TextInput} from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
+
 import styles from './styles'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const Login = () => {
+  const [checkPasswordVisible, setPasswordVisible] = useState(false)
+  const [checkPasswordVisible1, setPasswordVisible1] = useState(false)
+
   return (
     <View style={styles.container}>
       <View>
         <Image source={require('../../assets/images/Ellipse1.png')}></Image>
-        <Text
-          style={{
-            position: 'absolute',
-            paddingTop: '12%',
-            paddingLeft: '5%',
-            fontWeight: '800',
-            fontSize: 30,
-            color: 'black',
-          }}>
-          MyTask.ID
-        </Text>
-        <Text
-          style={{
-            position: 'absolute',
-            paddingTop: '20%',
-            paddingLeft: '5%',
-            fontWeight: '500',
-            fontSize: 28,
-            color: 'white',
-          }}>
-          Sign up
-        </Text>
+        <Text style={styles.text__Logo}>MyTask.ID</Text>
+        <Text style={styles.text__Task}>Login</Text>
       </View>
       <View
         style={{
@@ -39,9 +24,35 @@ const Login = () => {
         <Text style={styles.input__Text}>Email</Text>
         <TextInput placeholder='Input your email' style={styles.text__Input}></TextInput>
         <Text style={styles.input__Text}>Password</Text>
-        <TextInput placeholder='********' secureTextEntry={true} style={styles.text__Input}></TextInput>
+        <TextInput
+          placeholder='********'
+          secureTextEntry={checkPasswordVisible ? false : true}
+          style={styles.text__Input}></TextInput>
+        <TouchableOpacity
+          onPress={() => {
+            setPasswordVisible(!checkPasswordVisible)
+          }}>
+          {checkPasswordVisible ? (
+            <Icon name='eye-off' size={30} color='#A1C4FD' style={styles.eye__Icon} />
+          ) : (
+            <Icon name='eye' size={30} color='#A1C4FD' style={styles.eye__Icon} />
+          )}
+        </TouchableOpacity>
         <Text style={styles.input__Text}>Confirm Password</Text>
-        <TextInput placeholder='********' secureTextEntry={true} style={styles.text__Input}></TextInput>
+        <TextInput
+          placeholder='********'
+          secureTextEntry={checkPasswordVisible1 ? false : true}
+          style={styles.text__Input}></TextInput>
+        <TouchableOpacity
+          onPress={() => {
+            setPasswordVisible1(!checkPasswordVisible1)
+          }}>
+          {checkPasswordVisible1 ? (
+            <Icon name='eye-off' size={30} color='#A1C4FD' style={styles.eye__Icon} />
+          ) : (
+            <Icon name='eye' size={30} color='#A1C4FD' style={styles.eye__Icon} />
+          )}
+        </TouchableOpacity>
         <TouchableOpacity>
           <Text style={{paddingLeft: '65%', fontSize: 12, fontWeight: '800'}}>Forgot Password?</Text>
         </TouchableOpacity>
@@ -51,9 +62,9 @@ const Login = () => {
           <Text style={styles.text__Bottom}>Login</Text>
         </TouchableOpacity>
         <View style={{flexDirection: 'row', marginTop: '3%'}}>
-          <Text style={{color: 'black'}}>Already have an account?</Text>
+          <Text style={{color: 'black'}}>Dont have an account?</Text>
           <TouchableOpacity>
-            <Text style={{fontSize: 15, fontWeight: '900', paddingLeft: '1%', color: 'blue'}}>Login</Text>
+            <Text style={{fontSize: 15, fontWeight: '900', paddingLeft: '1%', color: 'blue'}}>Sign up</Text>
           </TouchableOpacity>
         </View>
         <Image

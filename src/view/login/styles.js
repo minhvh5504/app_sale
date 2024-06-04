@@ -5,6 +5,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#A1C4FD',
   },
+  text__Logo: {
+    position: 'absolute',
+    paddingTop: '12%',
+    paddingLeft: '5%',
+    fontWeight: '800',
+    fontSize: 30,
+    color: 'black',
+  },
+  text__Task: {
+    position: 'absolute',
+    paddingTop: '20%',
+    paddingLeft: '5%',
+    fontWeight: '500',
+    fontSize: 28,
+    color: 'white',
+  },
   text__Input: {
     marginBottom: '5%',
     paddingBottom: '2%',
@@ -26,6 +42,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '800',
     color: 'white',
+  },
+  eye__Icon: {
+    right: 10,
+    position: 'absolute',
+    marginTop: '-16.5%',
   },
 })
 export default styles

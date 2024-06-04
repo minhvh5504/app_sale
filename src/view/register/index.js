@@ -1,37 +1,22 @@
 /* eslint-disable no-undef */
-import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native'
+import {View, Text, TouchableOpacity, Image, TextInput, Alert} from 'react-native'
 import React, {useState} from 'react'
 import styles from './styles'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import CheckBox from '@react-native-community/checkbox'
 
 const Register = () => {
-  const [ischeck, setIsCheck] = useState(false)
+  const [isCheck, setCheck] = useState(false)
+
+  const [checkPasswordVisible, setPasswordVisible] = useState(false)
+  const [checkPasswordVisible1, setPasswordVisible1] = useState(false)
+
   return (
     <View style={styles.container}>
       <View>
         <Image source={require('../../assets/images/Ellipse1.png')}></Image>
-        <Text
-          style={{
-            position: 'absolute',
-            paddingTop: '12%',
-            paddingLeft: '5%',
-            fontWeight: '800',
-            fontSize: 30,
-            color: 'black',
-          }}>
-          MyTask.ID
-        </Text>
-        <Text
-          style={{
-            position: 'absolute',
-            paddingTop: '20%',
-            paddingLeft: '5%',
-            fontWeight: '500',
-            fontSize: 28,
-            color: 'white',
-          }}>
-          Sign up
-        </Text>
+        <Text style={styles.text__Logo}>MyTask.ID</Text>
+        <Text style={styles.text__Task}>Sign up</Text>
       </View>
       <View
         style={{
@@ -43,17 +28,43 @@ const Register = () => {
         <Text style={styles.input__Text}>Username</Text>
         <TextInput placeholder='Input your username' style={styles.text__Input}></TextInput>
         <Text style={styles.input__Text}>Password</Text>
-        <TextInput placeholder='********' secureTextEntry={true} style={styles.text__Input}></TextInput>
+        <TextInput
+          placeholder='********'
+          secureTextEntry={checkPasswordVisible ? false : true}
+          style={styles.text__Input}></TextInput>
+        <TouchableOpacity
+          onPress={() => {
+            setPasswordVisible(!checkPasswordVisible)
+          }}>
+          {checkPasswordVisible ? (
+            <Icon name='eye-off' size={30} color='#A1C4FD' style={styles.eye__Icon} />
+          ) : (
+            <Icon name='eye' size={30} color='#A1C4FD' style={styles.eye__Icon} />
+          )}
+        </TouchableOpacity>
         <Text style={styles.input__Text}>Confirm Password</Text>
-        <TextInput placeholder='********' secureTextEntry={true} style={styles.text__Input}></TextInput>
-        <View style={{flexDirection: 'row', alignItems: 'center', marginLeft: '5%'}}>
+        <TextInput
+          placeholder='********'
+          secureTextEntry={checkPasswordVisible1 ? false : true}
+          style={styles.text__Input}></TextInput>
+        <TouchableOpacity
+          onPress={() => {
+            setPasswordVisible1(!checkPasswordVisible1)
+          }}>
+          {checkPasswordVisible1 ? (
+            <Icon name='eye-off' size={30} color='#A1C4FD' style={styles.eye__Icon} />
+          ) : (
+            <Icon name='eye' size={30} color='#A1C4FD' style={styles.eye__Icon} />
+          )}
+        </TouchableOpacity>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <CheckBox
             disabled={false}
-            value={ischeck}
-            onValueChange={() => setIsCheck(!ischeck)}
-            tintColors={{true: 'white'}}
+            value={isCheck}
+            onValueChange={() => setCheck(!isCheck)}
+            tintColors={{true: 'yellow'}}
           />
-          <Text style={{paddingLeft: '3%', fontSize: 12, fontWeight: '800'}}>I agree with Terms and Privacy</Text>
+          <Text style={{fontSize: 11, fontWeight: '900'}}>I agree with Terms and Privacy</Text>
         </View>
       </View>
       <View style={{alignItems: 'center'}}>
