@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import RootComponent from 'view/index'
+import Main from './src/view/main'
 
 const App = () => {
-  return <RootComponent />
+  return <Main />
 }
 
 export default App
